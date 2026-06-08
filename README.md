@@ -1,51 +1,45 @@
-# Database – Level 1 (SQL: Concepts & Practice)
+# Database – Level 1 (PostgreSQL: Concepts & Practice)
 
-Welcome to my repository for **Level 1** of Databases. This is the **15th course** in my programming journey and one of the most critical milestones in software development. 
-
-> "Strong developers master databases — weak ones fight them forever." — **Mohammed Abu-Hadhoud**
+Welcome to my repository for **Level 1** of Databases. This is the **14th course** in my programming journey, marking the critical transition to robust data persistence and backend engineering using **PostgreSQL**.
 
 ## 🌐 Overview
-After building a massive foundation in system architecture, algorithmic problem solving, OOP engineering, Data Structures, and transitioning to C# (.NET), it is time to master the core of all modern applications: **Data Persistence and Design**. 
+After building a solid foundation in system architecture, OOP engineering, Data Structures, and transitioning to C# (.NET), this phase focuses on mastering the core of modern applications: **Data Persistence and Design**. 
 
-This course treats databases as a core programming skill, not a side topic. Mastering databases correctly directly affects system performance, scalability, stability, and development time. A developer who understands databases writes simpler code, builds faster systems, and avoids catastrophic performance disasters.
+This course treats databases as a core programming necessity. Mastering PostgreSQL correctly directly controls system performance, scalability, and stability. 
 
 ## ⚙️ The Methodology
-Learning SQL without understanding database design is a common and dangerous mistake. My approach in this repository follows the professional engineering lifecycle:
-1. **Conceptual Design:** Understanding the business rules and designing Entity-Relationship Diagrams (ERD) before writing a single line of code.
-2. **Logical Design:** Converting ERDs into rigorous Relational Schemas step-by-step.
-3. **Implementation (SQL):** Translating the logical design into physical tables using Data Definition (DDL) and Data Manipulation (DML) languages.
-4. **Optimization:** Applying Normalization (1NF → 3NF) and indexing to ensure data integrity and query performance.
+Learning SQL syntax without understanding architecture leads to performance bottlenecks. The development cycle here follows rigorous engineering standards:
+1. **Conceptual Design:** Architecting Entity-Relationship Diagrams (ERD) based on strict business logic prior to execution.
+2. **Logical Design:** Systematically converting ERDs into Relational Schemas.
+3. **Implementation (PostgreSQL):** Translating schemas into physical databases using PostgreSQL Data Definition (DDL) and Data Manipulation (DML).
+4. **Optimization:** Enforcing Normalization (1NF → 3NF) and strategic indexing to guarantee data integrity and query efficiency.
 
 ## 🧠 What I’m Learning
-* **Data Organization vs. Persistence:** Distinguishing clearly between Data Structures (in-memory) and Databases (storage).
+* **PostgreSQL Architecture:** Operating one of the most advanced open-source relational databases.
 * **Conceptual & Logical Design:** Mastering ERDs, mapping constraints, and relational schemas.
-* **Integrity & Constraints:** Properly applying Primary Keys, Foreign Keys, UNIQUE, and NULL constraints to protect data integrity.
-* **SQL Mastery:** Writing confident queries covering `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and complex `JOINS`.
-* **Database Objects:** Utilizing Views for security/abstraction and Indexes for performance.
-* **Data Normalization:** Restructuring data to eliminate redundancy and prevent insertion, update, and deletion anomalies.
+* **Integrity & Constraints:** Applying Primary Keys, Foreign Keys, UNIQUE, and NULL constraints natively in PostgreSQL.
+* **Query Execution:** Writing complex queries covering `SELECT`, `WHERE`, `GROUP BY`, `HAVING`, and multi-level `JOINS`.
+* **Database Objects:** Utilizing Views for query abstraction and Indexes for high-speed data retrieval.
+* **Data Normalization:** Restructuring data mathematically to eliminate redundancy and prevent structural anomalies.
 
 ## 📂 Repository Structure
-This repository documents the journey from theory to complex queries:
-
-* **01_Database_Fundamentals:** Core concepts, redundancy, and data integrity.
+* **01_Database_Fundamentals:** Core concepts, redundancy, and system integrity.
 * **02_Conceptual_Design_ERD:** Drawing entities, attributes, and relationships.
-* **03_Logical_Design_Relational_Schema:** Mapping ERDs to tables.
-* **04_SQL_DDL_Data_Definition:** `CREATE`, `ALTER`, `DROP` tables and constraints.
-* **05_SQL_DML_Data_Manipulation:** `INSERT`, `UPDATE`, `DELETE` records safely.
-* **06_SQL_Queries_and_Joins:** Advanced data retrieval and table joining.
-* **07_Views_and_Indexes:** Abstracting logic and boosting search performance.
-* **08_Database_Normalization:** Applying 1NF, 2NF, and 3NF rules to real datasets.
+* **03_Logical_Design_Relational_Schema:** Standardizing ERDs to tables.
+* **04_PostgreSQL_DDL_Data_Definition:** `CREATE`, `ALTER`, `DROP` tables and specific constraints.
+* **05_PostgreSQL_DML_Data_Manipulation:** `INSERT`, `UPDATE`, `DELETE` records securely.
+* **06_PostgreSQL_Queries_and_Joins:** Advanced data retrieval and table joining logic.
+* **07_Views_Indexes_and_Performance:** Abstracting logic and boosting search execution.
+* **08_Database_Normalization:** Applying 1NF, 2NF, and 3NF protocols.
 
 ## 🛠️ Technologies Used
-* **Language:** SQL (Structured Query Language).
-* **Concepts:** Relational Database Management Systems (RDBMS), ERD, Normalization.
-* **Prerequisite Stack:** C++, OOP, Data Structures.
+* **Database Engine:** PostgreSQL
+* **Tools:** psql (CLI), pgAdmin
+* **Language:** SQL (Structured Query Language)
 
 ## 🎓 Certification Goal
-By completing this course, I verify my ability to:
-* Design relational databases correctly from scratch.
-* Write efficient and complex SQL queries.
-* Apply constraints and normalization properly to ensure data integrity.
-* Build highly performant database-driven applications.
-
-> "Master Databases Correctly — The Skill That Saves You Years of Programming Time."
+By completing this stage, I verify my technical capacity to:
+* Architect relational databases cleanly from scratch.
+* Write efficient, highly optimized PostgreSQL queries.
+* Enforce strict constraints and normalization to secure data integrity.
+* Power large-scale, backend-driven applications.
