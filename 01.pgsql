@@ -1,1 +1,4 @@
-SELECT * FROM student;                                                    
+SELECT
+    *
+FROM
+    pg_database;
