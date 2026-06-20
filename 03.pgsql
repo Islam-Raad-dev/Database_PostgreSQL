@@ -24,5 +24,8 @@ RENAME TO AppUsers;
 ALTER TABLE Users 
 ALTER COLUMN Age TYPE BIGINT;
 
+-- Delete a column
+
+
 ALTER TABLE Users 
 DROP COLUMN IsActive;
