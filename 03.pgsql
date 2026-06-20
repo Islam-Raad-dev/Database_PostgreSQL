@@ -1,1 +1,2 @@
-                     
+-- DDL - Alter Table Statement
+
