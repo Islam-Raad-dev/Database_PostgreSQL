@@ -25,7 +25,7 @@ Learning SQL syntax without understanding architecture leads to performance bott
 
 ## 🛠️ Technologies Used
 * **Database Engine:** PostgreSQL
-* **Tools:** psql (CLI), pgAdmin
+* **Tools:** psql (CLI), DBeaver
 * **Language:** SQL (Structured Query Language)
 
 ## 🎓 Certification Goal
