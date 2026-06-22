@@ -22,3 +22,7 @@ FROM users
 WHERE status = 'active';
 
 -- Insert Into ..Select From Statement
+INSERT INTO archive_users (user_id, username, archived_at)
+SELECT id, username, NOW()
+FROM users
+WHERE status = 'deleted';
