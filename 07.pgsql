@@ -6,7 +6,7 @@ FROM hr.employees;
 SELECT DISTINCT department_id 
 FROM hr.employees;
 
--- Where Statement + AND, OR, NOT
+-- Where Statement + AND, OR, NOT  
 SELECT employee_id, salary, department_id 
 FROM hr.employees
 WHERE (department_id = 50 AND salary > 5000)
