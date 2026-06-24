@@ -11,3 +11,5 @@ SELECT employee_id, salary, department_id
 FROM hr.employees
 WHERE (department_id = 50 AND salary > 5000)
    OR NOT (department_id = 90);
+
+-- Sorting: Order By
