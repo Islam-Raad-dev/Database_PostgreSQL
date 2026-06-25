@@ -1,4 +1,4 @@
---   Identity Field (Auto Increment)
+-- Identity Field (Auto Increment)
  
 CREATE TABLE users (                       
     user_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,     
