@@ -1,6 +1,6 @@
 -- DDL - Alter Table Statement
        
-
+   
 -- Add Column
 
 ALTER TABLE Users 
