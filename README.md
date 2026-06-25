@@ -29,7 +29,7 @@ Learning SQL syntax without understanding architecture leads to performance bott
 * **04_DML : Data Manipulation Language:** `INSERT`, `UPDATE`, and `DELETE` records securely.
 * **05_DQL : Data Query Language:** Advanced data retrieval and table joining logic using `SELECT`.
 * **06_DCL : Data Control Language:** Managing access permissions via `GRANT` and `REVOKE`.
-* **07_TCL : Transaction Control Language:** Abstracting logic and ensuring consistency with `COMMIT` and `ROLLBACK`.
+* **07_TCL : Transaction Control Language:** Abstracting logic with `COMMIT` and `ROLLBACK`.
 * **08_Misc:** Joins, Constraints, and Normalization.
 * **09_Projects:** Real-world database design implementations and capstone queries.
 
