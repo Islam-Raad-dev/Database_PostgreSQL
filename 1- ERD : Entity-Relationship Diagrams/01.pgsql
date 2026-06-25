@@ -1,6 +1,6 @@
 --
 Entity-Relationship Diagrams (ERD):
-
+  
 1. **Definition:** An ERD (Entity-Relationship Diagram) is a visual representation of a database's logical structure, showing how different entities interact with one another.
 2. **Primary Purpose:** It bridges the gap between business requirements and database implementation, serving as a blueprint for developers and stakeholders.
 3. **Database Independence:** High-level ERDs are agnostic, meaning they can be designed before deciding whether to use PostgreSQL, MySQL, or Oracle.
