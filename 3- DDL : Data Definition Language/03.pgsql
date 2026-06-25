@@ -1,5 +1,5 @@
--- DDL - Alter Table Statement
-        
+-- DDL - Data Definition Language
+          
    
 -- Add Column
 
