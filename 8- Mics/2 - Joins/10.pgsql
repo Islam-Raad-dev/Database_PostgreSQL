@@ -1,5 +1,5 @@
 -- INNER JOIN
-
+ 
 SELECT Employyes.Name, Departments.Name
 FROM Employees
 INNER JOIN Departments
