@@ -22,3 +22,10 @@ WHERE (department_id = 50 AND salary > 5000)
 SELECT employee_id, salary 
 FROM hr.employees
 ORDER BY salary DESC NULLS LAST;
+
+-- Exists Statement 
+SELECT CASE 
+WHEN EXISTS ( SELECT 1 FROM customers WHERE salary > 6000
+) THEN 'YES'
+ELSE 'NO'
+END AS "Result";
