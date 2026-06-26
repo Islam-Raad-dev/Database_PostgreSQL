@@ -31,7 +31,8 @@ Learning SQL syntax without understanding architecture leads to performance bott
 * **06_DCL : Data Control Language:** Managing access permissions via `GRANT` and `REVOKE`.
 * **07_TCL : Transaction Control Language:** Abstracting logic with `COMMIT` and `ROLLBACK`.
 * **08_Misc:** Joins, Constraints, and Normalization.
-* **09_Projects:** Real-world database design implementations and capstone queries.
+* **09_SQL Problem:** ▫️ Filtering, Complex joins, Subqueries, views,EXISTS, CASE, UNION, and conditional logic
+* **10_Projects:** Real-world database design implementations and capstone queries.
 
 ## 🛠️ Technologies Used
 * **Database Engine:** PostgreSQL
