@@ -8,4 +8,11 @@ CREATE TABLE Employees (
 );
 
 
--- 
+--  CHECK Constraint
+
+CREATE TABLE Employees (
+    id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    age INT (age >= 18) ,
+    PRIMARY KEY (id)
+);
