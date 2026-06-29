@@ -1,4 +1,4 @@
--- Simple library Databse
+-- Library Databse
 
 -- Requirments:
 
