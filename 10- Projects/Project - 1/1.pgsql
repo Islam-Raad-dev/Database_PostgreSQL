@@ -1,7 +1,7 @@
 
 -- Simple Clinic Database
 
-
+   
 
 
 CREATE TYPE appointment_status AS ENUM (
