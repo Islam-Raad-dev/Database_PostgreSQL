@@ -1,52 +1,114 @@
--- -- Here are the database requirements for a simple clinic:
--- 1. Patients:
--- • The database should store information about patients.
--- • Each patient should have a unique identifier, a name, a
--- date of birth, gender, contact information (phone number,
--- email), and address.
--- 2. Doctors:
--- • The database should store information about doctors.
--- • Each doctor should have a unique identifier, a name,
--- specialization, a date of birth, gender, contact
--- information (phone number, email), and address.
--- 3. Appointments:
--- • The database should store information about appointments.
--- • Each appointment should have a unique identifier, a
--- patient, a doctor, appointment date and time, and
--- appointment status.
--- • Appointment Status:
--- 1. Pending: The appointment has been scheduled but has not
--- yet occurred.
--- 2. Confirmed: The appointment has been confirmed by both
--- the patient and the healthcare provider.
--- 3. Completed: The appointment has taken place as scheduled.
--- 4. Canceled: The appointment has been canceled either by
--- the patient or the healthcare provider.
--- 5. Rescheduled: The appointment has been rescheduled for a
--- different date or time.
--- 6. No Show: The patient did not show up for the appointment
--- without canceling or rescheduling.
--- ProgrammingAdvices.com
--- © Copyright 2023
--- Project 1 – Simple Clinic (Requirements)
--- 4. Medical Records:
--- • The database should store medical records for patients.
--- • For each attended appointment there should be a medical
--- record.
--- • Each medical record should have a unique identifier, a
--- patient, a doctor, a description of the visit, diagnosis,
--- prescribed medication, and any additional notes.
--- 5. Prescription:
--- • The database should store information about prescribed
--- medications.
--- • For each medical record there should be at most one
--- prescription.
--- • Each prescription should have a unique identifier, a
--- medical record, medication name, dosage, frequency, start
--- date, end date, and any special instructions.
--- 6. Payments:
--- • The database should store information about payments.
--- • Payment is per appointment.
--- • Each payment should have a unique identifier, a patient, a
--- payment date, payment method, amount paid, and any additional
--- notes.
+-- Simple library Databse
+
+-- Requirments:
+
+-- 1. Book Management:
+
+--  Store and manage information about books, including title,
+-- author(s), ISBN, publication date, genre, and additional
+-- details.
+
+--  Track availability status of book copies, indicating
+-- whether they are available for borrowing or checked out by
+-- users.
+
+--  Manage multiple copies of a book, each with a unique
+-- identifier (copy ID).
+
+-- 2. User Management:
+
+--  Maintain records of library users, including their
+-- names, contact information, and library card numbers.
+
+-- 3. Borrowing and Returns:
+
+--  Enable users to borrow book copies from the library.
+--  Track borrowing records, including the book copy
+-- borrowed, user information, borrowing date, and due
+-- date.
+
+--  Handle the return process, updating the availability
+-- status of book copies.
+
+--  Check for any fines or penalties associated with late
+-- returns or damaged book copies.
+
+-- 4. Holds and Reservations:
+
+--  Allow users to place holds or reservations on book
+-- copies that are currently checked out.
+
+--  Manage the order of reservations to ensure fairness.
+
+-- 5. Fine Management:
+
+--  Calculate and manage fines or penalties for late
+-- returns book copies.
+
+--  Keep track of the fine amount owed by each user.
+
+--  Maintain the payment status to track whether fines
+-- have been paid or are still pending.
+
+
+-----------------------------------------------------------------------
+
+CREATE TABLE authors (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    isbn VARCHAR(50) UNIQUE NOT NULL,
+    publication_date DATE,
+    genre VARCHAR(100),
+    additional_details TEXT
+);
+
+CREATE TABLE book_authors (
+    book_id INT REFERENCES books(id) ON DELETE CASCADE,
+    author_id INT REFERENCES authors(id) ON DELETE CASCADE,
+    PRIMARY KEY (book_id, author_id)
+);
+
+CREATE TABLE library_users (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    contact_info VARCHAR(255) NOT NULL,
+    library_card_number VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE book_copies (
+    id SERIAL PRIMARY KEY,
+    book_id INT REFERENCES books(id) ON DELETE CASCADE,
+    availability_status VARCHAR(20) DEFAULT 'AVAILABLE' CHECK (availability_status IN ('AVAILABLE', 'CHECKED_OUT', 'LOST'))
+);
+
+CREATE TABLE borrowing_records (
+    id SERIAL PRIMARY KEY,
+    copy_id INT REFERENCES book_copies(id) ON DELETE RESTRICT,
+    user_id INT REFERENCES library_users(id) ON DELETE RESTRICT,
+    borrowing_date DATE DEFAULT CURRENT_DATE,
+    due_date DATE NOT NULL,
+    return_date DATE,
+    is_returned_damaged BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE reservations (
+    id SERIAL PRIMARY KEY,
+    copy_id INT REFERENCES book_copies(id) ON DELETE CASCADE,
+    user_id INT REFERENCES library_users(id) ON DELETE CASCADE,
+    reservation_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'PENDING' CHECK (status IN ('PENDING', 'NOTIFIED', 'FULFILLED', 'CANCELLED'))
+);
+
+CREATE TABLE fines (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES library_users(id) ON DELETE CASCADE,
+    borrowing_record_id INT REFERENCES borrowing_records(id) ON DELETE RESTRICT,
+    fine_amount DECIMAL(10, 2) NOT NULL,
+    is_paid BOOLEAN DEFAULT FALSE,
+    fine_reason VARCHAR(50) CHECK (fine_reason IN ('LATE_RETURN', 'DAMAGED_COPY'))
+);
