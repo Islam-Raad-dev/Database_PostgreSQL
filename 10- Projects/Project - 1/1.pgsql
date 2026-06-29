@@ -3,7 +3,7 @@
 
 
 
--- 1. إنشاء أنواع بيانات مخصصة (ENUMs) للحالات والجنس بدلاً من الجداول المعقدة
+
 CREATE TYPE appointment_status AS ENUM (
     'Pending', 'Confirmed', 'Completed', 'Canceled', 'Rescheduled', 'No Show'
 );
@@ -15,13 +15,11 @@ CREATE TYPE gender_type AS ENUM (
 
 -----------------------------------------------------------------------
 
--- 2. جدول التخصصات (تم تعديله ليكون صفوفاً وليس أعمدة)
 CREATE TABLE specializations (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     specialization_name VARCHAR(100) NOT NULL UNIQUE
 );
 
--- 3. جدول المرضى
 CREATE TABLE patients (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -33,7 +31,6 @@ CREATE TABLE patients (
     address TEXT NOT NULL
 );
 
--- 4. جدول الأطباء
 CREATE TABLE doctors (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -46,7 +43,6 @@ CREATE TABLE doctors (
     address TEXT NOT NULL
 );
 
--- 5. جدول المواعيد
 CREATE TABLE appointments (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     patient_id INT NOT NULL REFERENCES patients(id),
@@ -55,7 +51,6 @@ CREATE TABLE appointments (
     status appointment_status NOT NULL DEFAULT 'Pending'
 );
 
--- 6. جدول السجلات الطبية (تمت إضافة ارتباط بالموعد)
 CREATE TABLE medical_records (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     appointment_id INT NOT NULL UNIQUE REFERENCES appointments(id),
@@ -66,7 +61,6 @@ CREATE TABLE medical_records (
     additional_notes TEXT
 );
 
--- 7. جدول الوصفات الطبية (وصفة واحدة كحد أقصى لكل سجل طبي)
 CREATE TABLE prescriptions (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     medical_record_id INT NOT NULL UNIQUE REFERENCES medical_records(id), 
@@ -78,7 +72,6 @@ CREATE TABLE prescriptions (
     special_instructions TEXT
 );
 
--- 8. جدول المدفوعات (الدفع لكل موعد)
 CREATE TABLE payments (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     appointment_id INT NOT NULL REFERENCES appointments(id),
