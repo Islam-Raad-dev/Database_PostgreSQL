@@ -1,0 +1,16 @@
+AI Engineering Repositories:
+- Kaggle Datasets
+- UCI Machine Learning Repository
+- Hugging Face (Tabular)
+
+Agricultural & Environmental Data:
+- FAOSTAT
+- NASA Earthdata
+
+Financial & Banking Sector:
+- Alpha Vantage / YFinance API
+- World Bank Open Data
+
+Structural & Sports Databases:
+- Pagila Database
+- Sports Reference
