@@ -11,3 +11,7 @@ INSERT INTO users (username) VALUES ('Ali_Mosul');
 INSERT INTO users (username) VALUES ('Omar_Dev');
 
 SELECT * FROM users;
+
+SELECT * FROM Employees 
+ORDER BY random() 
+LIMIT 10;
